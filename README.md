@@ -1,0 +1,3 @@
+This example demonstrates a potential issue when using `Enum.each` in Elixir with operations that might block or take a significant amount of time.  Improper handling can lead to application freezes or deadlocks if the enumeration is used within a critical path.
+
+The bug showcases a scenario where `Process.sleep` simulates a lengthy operation. In a real-world scenario, this could be a network request, a database query, or any other I/O-bound task.  Because `Enum.each` is not designed to handle such situations efficiently, the application's responsiveness can suffer.
